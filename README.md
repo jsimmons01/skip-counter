@@ -1,3 +1,3 @@
 # Skip Counter
 
-Descrip
+Description
