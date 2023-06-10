@@ -415,3 +415,17 @@ main {
   color: var(--clr-white);
   background: var(--clr-black);
 }
+input[type=text], select{
+  
+  padding: 8px 12px;
+}
+input[type=submit]{
+  
+  padding: 8px 12px;
+  background-color: var(--clr-primary-3);
+  border-radius: 4px;
+}
+input[type=submit]:hover{
+  color: var(--clr-white);
+  background: var(--clr-black);
+}
