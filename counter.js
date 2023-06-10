@@ -1,5 +1,6 @@
 const btns = document.querySelectorAll(".btn");
 const num = document.querySelector("#value");
+
 let count = 0;
 
 btns.forEach( btn => {
