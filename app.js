@@ -1,6 +1,6 @@
 const btns = document.querySelectorAll(".btn");
-const num = document.querySelector("#value");
-const submitBtn = document.querySelector('#submit');    
+const submitBtn = document.querySelector('#submit'); 
+const numValue = document.querySelector("#value")   
 let count = 0;
 
 
@@ -8,7 +8,6 @@ submitBtn.addEventListener('click',function(e){
     let userNum = Number(document.getElementById('num').value);
     
     e.preventDefault();
-     console.log(userNum);
 
      btns.forEach(btn => {
 
@@ -27,13 +26,13 @@ submitBtn.addEventListener('click',function(e){
             }
             value.textContent = count
             if(count< 0){
-                value.style.color = 'red';
+                numValue.style.color = 'red';
             }
             if(count> 0){
-                value.style.color = 'green';    
+                numValue.style.color = 'green';    
             }
             if(count === 0){
-                value.style.color = 'black';
+                numValue.style.color = 'black';
             }    
            
         })

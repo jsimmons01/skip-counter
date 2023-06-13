@@ -416,7 +416,7 @@ main {
   background: var(--clr-black);
 }
 input[type=text], select{
-  
+  width: 55%;
   padding: 8px 12px;
 }
 input[type=submit]{
