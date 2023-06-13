@@ -23,6 +23,7 @@ submitBtn.addEventListener('click',function(e){
             }
             if(counter.contains('reset')){
                 count = 0;
+                userNum = 0;
             }
             value.textContent = count
             if(count< 0){
