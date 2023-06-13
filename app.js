@@ -1,12 +1,14 @@
 const btns = document.querySelectorAll(".btn");
 const submitBtn = document.querySelector('#submit'); 
-const numValue = document.querySelector("#value")   
+const numValue = document.querySelector("#value");
+const form = document.querySelector('#form');
+const text = document.querySelector('#text');
 let count = 0;
 
 
 submitBtn.addEventListener('click',function(e){
-    let userNum = Number(document.getElementById('num').value);
     
+    let userNum = Number(document.getElementById('num').value); 
     e.preventDefault();
 
      btns.forEach(btn => {
@@ -23,8 +25,15 @@ submitBtn.addEventListener('click',function(e){
             if(counter.contains('reset')){
                 count = 0;
                 userNum = 0;
+                form.reset();
+                text.textContent = 'Insert a number'
+                
             }
-            value.textContent = count
+            if(userNum){
+                        text.textContent = 'Counting By'
+                    }
+            numValue.textContent = count;
+         
             if(count< 0){
                 numValue.style.color = 'red';
             }
@@ -39,4 +48,6 @@ submitBtn.addEventListener('click',function(e){
         
     })
 })
+
+
 
