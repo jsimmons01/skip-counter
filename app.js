@@ -6,10 +6,12 @@ const text = document.querySelector('#text');
 let count = 0;
 
 
+
 submitBtn.addEventListener('click',function(e){
     
+    
     let userNum = Number(document.getElementById('num').value); 
-
+    console.log(userNum)
     e.preventDefault();
 
     function reset(){
@@ -32,6 +34,7 @@ submitBtn.addEventListener('click',function(e){
         btn.addEventListener('click', function(e){
             let counter = e.currentTarget.classList;
     
+            
             if(counter.contains('decrease')){
                 count-= userNum;
             }
