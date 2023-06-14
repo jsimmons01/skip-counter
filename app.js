@@ -9,7 +9,23 @@ let count = 0;
 submitBtn.addEventListener('click',function(e){
     
     let userNum = Number(document.getElementById('num').value); 
+
     e.preventDefault();
+
+    function reset(){
+        count = 0;
+        userNum = 0;
+        form.reset();
+        text.textContent = 'Insert a number';     
+    }
+
+    if(userNum < 2 || userNum > 100){
+        alert('Choose a number between 2-100');
+        reset();
+        
+    } else {
+        text.textContent = `Counting by: ${userNum}`
+    }
 
      btns.forEach(btn => {
 
@@ -23,15 +39,10 @@ submitBtn.addEventListener('click',function(e){
                 count+= userNum;
             }
             if(counter.contains('reset')){
-                count = 0;
-                userNum = 0;
-                form.reset();
-                text.textContent = 'Insert a number'
+              reset();
                 
             }
-            if(userNum){
-                        text.textContent = 'Counting By'
-                    }
+           
             numValue.textContent = count;
          
             if(count< 0){
