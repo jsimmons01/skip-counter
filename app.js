@@ -3,30 +3,37 @@ const submitBtn = document.querySelector('#submit');
 const numValue = document.querySelector("#value");
 const form = document.querySelector('#form');
 const text = document.querySelector('#text');
-let userNum = '';
+let userNum = 0;
 let count = 0;
 
+btns.forEach(btn => {
+    btn.addEventListener('click', function(e){
+     let  countBtn  = e.currentTarget.classList;
 
+     //My validation wasn't working because I was trying to create it inside the submit
+     //I want to stop users from clicking the button outside the submit, not after the submit buttons is clciked
+     if(userNum === 0 && countBtn.contains('reset') || countBtn.contains('decrease') || countBtn.contains('increase')){
+        alert('You must insert a number and then submit!')
+     }
+    })
+})
 
 submitBtn.addEventListener('click',function(e){
     
-    userNum = document.getElementById('num').value;
-    userInt = Number(userNum)
-    
-    console.log(userNum)
-    console.log('Count is:' + count)
+ let userNum = Number(document.getElementById('num').value);
+
     e.preventDefault();
 
     function resetCount(){
       location.reload();   
     }
 
-    if(userInt < 2 || userInt > 100){
+    if(userNum < 2 || userNum > 100){
         alert('Choose a number between 2-100');
         resetCount();
         
     } else {
-        text.textContent = `Counting by: ${userInt}`
+        text.textContent = `Counting by: ${userNum}`
     }
 
      btns.forEach(btn => {
@@ -34,13 +41,18 @@ submitBtn.addEventListener('click',function(e){
         btn.addEventListener('click', function(e){
             let counter = e.currentTarget.classList;
            
+            /* I am going to start commenting when I figure something out at the place where I solved so I would forget what I learned. Above I 
+            had to reload the page instead of resetinng each thing. The input was duplicating based on the amount of times I reset. I 
+            may can figure out another solution, but for now that is what I have. I must assign the input variable locally, otherwise it will keep the intial value which is zero
+            Lastly, counter.contains("")  is how i say if this button is pressed do this*/
+    
             
             if(counter.contains('decrease')){
-                count-= userInt;
-                console.log(userInt)
+                count-= userNum;
+               
             }
             if(counter.contains('increase')){
-                count+= userInt;
+                count+= userNum;
             }
             if(counter.contains('reset')){
               resetCount();
