@@ -7,3 +7,4 @@ Put in a number and choose the amount you want to skip. When you press start cou
 1. if user clicks on counting buttons before submit, send message
 
 
+

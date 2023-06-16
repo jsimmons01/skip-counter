@@ -6,18 +6,6 @@ const text = document.querySelector('#text');
 let userNum = 0;
 let count = 0;
 
-btns.forEach(btn => {
-    btn.addEventListener('click', function(e){
-     let  countBtn  = e.currentTarget.classList;
-
-     //My validation wasn't working because I was trying to create it inside the submit
-     //I want to stop users from clicking the button outside the submit, not after the submit buttons is clciked
-     if(userNum === 0 && countBtn.contains('reset') || countBtn.contains('decrease') || countBtn.contains('increase')){
-        alert('You must insert a number and then submit!')
-     }
-    })
-})
-
 submitBtn.addEventListener('click',function(e){
     
  let userNum = Number(document.getElementById('num').value);
